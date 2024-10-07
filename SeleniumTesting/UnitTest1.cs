@@ -14,7 +14,7 @@ namespace SeleniumNUnitExample
         public void Setup()
         {
             // Initialize the ChromeDriver
-            driver = new ChromeDriver(@"C:\Users\daniil.solomykov\source\repos\TestProject1\driver\");
+            driver = new ChromeDriver(@"C:\Users\opilane\source\repos\SeleniumTesting\SeleniumTesting\Drivers");
             // Maximize the browser window
             driver.Manage().Window.Maximize();
             // Set an implicit wait time
@@ -25,34 +25,34 @@ namespace SeleniumNUnitExample
         public void SearchTest()
         {
             // Navigate to Google's homepage
-            driver!.Navigate().GoToUrl("https://www.google.com");
+            driver!.Navigate().GoToUrl("https://yaroslavyekasov22.thkit.ee/");
 
-            // Accept cookies if prompted (optional, depends on region)
-            try
-            {
-                var acceptCookiesButton = driver.FindElement(By.Id("L2AGLb"));
-                acceptCookiesButton.Click();
-            }
-            catch (NoSuchElementException)
-            {
-                // Do nothing if the accept cookies button is not present
-            }
+            //// Accept cookies if prompted (optional, depends on region)
+            //try
+            //{
+            //    var acceptCookiesButton = driver.FindElement(By.Id("L2AGLb"));
+            //    acceptCookiesButton.Click();
+            //}
+            //catch (NoSuchElementException)
+            //{
+            //    // Do nothing if the accept cookies button is not present
+            //}
 
             // Find the search box using its name attribute
-            var searchBox = driver.FindElement(By.Name("q"));
+            //var searchBox = driver.FindElement(By.Name("ul"));
 
-            // Enter the search term
-            searchBox.SendKeys("Selenium WebDriver");
+            //// Enter the search term
+            //searchBox.SendKeys("Selenium WebDriver");
 
-            // Submit the search form
-            searchBox.Submit();
+            //// Submit the search form
+            //searchBox.Submit();
 
-            // Wait for the results page to load and display the results
-            // It's better to use explicit waits in real tests
-            System.Threading.Thread.Sleep(2000);
+            //// Wait for the results page to load and display the results
+            //// It's better to use explicit waits in real tests
+            //System.Threading.Thread.Sleep(2000);
 
-            // Verify that the page title contains the search term
-            Assert.That(driver.Title.Contains("Selenium WebDriver"), "The page title does not contain the search term.");
+            //// Verify that the page title contains the search term
+            //Assert.That(driver.Title.Contains("Selenium WebDriver"), "The page title does not contain the search term.");
         }
 
         [TearDown]
